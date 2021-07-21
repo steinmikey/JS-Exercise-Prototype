@@ -38,6 +38,8 @@ Airplane.prototype.land = function () {
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
+console.log("TASK 1");
+
 function Person(name, age) {
   this.name = name;
   this.age = age;
@@ -58,22 +60,22 @@ Person.prototype.toString = function () {
   return `${this.name}, ${this.age}`;
 };
 
-const kevin = new Person("Kevin", 26);
+const john = new Person("John", 26);
 const leo = new Person("Leo", 18);
 
-kevin.eat("");
-kevin.eat("");
-kevin.eat("");
-kevin.eat("");
-kevin.eat("");
+john.eat("apple");
+john.eat("banana");
+john.eat("pear");
+john.eat("apple");
+john.eat("celery");
 
-console.log(kevin.stomach);
+console.log(john.stomach);
 
-kevin.poop();
+john.poop();
 
-console.log(kevin.stomach);
+console.log(john.stomach);
 
-console.log(kevin.toString());
+console.log(john.toString());
 
 /*
   TASK 2
@@ -89,7 +91,27 @@ console.log(kevin.toString());
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {}
+console.log("TASK 2");
+
+function Car(model, mpg) {
+  this.model = model;
+  this.milesPerGallon = mpg;
+  this.tank = 0;
+  this.odometer = 0;
+}
+Car.prototype.fill = function (gallons) {
+  this.tank += gallons;
+};
+Car.prototype.drive = function (distance) {
+  this.odometer += distance;
+  this.tank -= distance / this.milesPerGallon;
+};
+
+const civic = new Car("Civic", 35);
+civic.fill(11);
+console.log(civic);
+civic.drive(350);
+console.log(civic);
 
 /*
   TASK 3
@@ -98,6 +120,9 @@ function Car() {}
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
+
+console.log("TASK 3");
+
 function Baby() {}
 
 /* 
