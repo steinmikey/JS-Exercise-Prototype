@@ -158,10 +158,10 @@ console.log(zoey.play());
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. If 'this' has no context, it's globally bound-- it will return the window, which is a bad thing.
+  2. Explicit binding: when using .call, .apply, or .bind, you specifically say what 'this' is referring to, through a parameter, etc.
+  3. Implicit binding: bound to the object that's left of the method called.
+  4. New binding, whenever a new object is created using a constructor function, the function's 'this' references bind to that new object.
 */
 
 ///////// END OF CHALLENGE /////////
