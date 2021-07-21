@@ -123,7 +123,37 @@ console.log(civic);
 
 console.log("TASK 3");
 
-function Baby() {}
+// function Person(name, age) {
+//   this.name = name;
+//   this.age = age;
+//   this.stomach = [];
+// }
+
+// Person.prototype.eat = function (edible) {
+//   if (this.stomach.length < 10) {
+//     this.stomach.push(edible);
+//   }
+// };
+
+// Person.prototype.poop = function () {
+//   this.stomach = [];
+// };
+
+// Person.prototype.toString = function () {
+//   return `${this.name}, ${this.age}`;
+// };
+function Baby(name, age, favoriteToy) {
+  Person.call(this, name, age);
+  this.favoriteToy = favoriteToy;
+}
+Baby.prototype = Object.create(Person.prototype);
+Baby.prototype.play = function () {
+  return `Playing with ${this.favoriteToy}`;
+};
+
+const zoey = new Baby("Zoey", 1, "zebra");
+console.log(zoey);
+console.log(zoey.play());
 
 /* 
   TASK 4
